@@ -24,14 +24,14 @@ if (0 > version_compare(PHP_VERSION, '5')) {
  *
  * @author firstname and lastname of author, <author@example.org>
  */
-require_once('class.Appointment.php');
+//require_once('class.Appointment.php');
 
 /**
  * include AppointmentLoader
  *
  * @author firstname and lastname of author, <author@example.org>
  */
-require_once('class.AppointmentLoader.php');
+//require_once('class.AppointmentLoader.php');
 
 /* user defined includes */
 // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:0000000000000868-includes begin
@@ -125,8 +125,10 @@ class User
      */
     public function _construct( String $name,  String $lastName,  String $password,  Integer $Id)
     {
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:00000000000008FE begin
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:00000000000008FE end
+		$this->name = $name;
+		$this->lastName = $lastName;
+                $this->password = $password;
+                $this->Id = $Id;
     }
 
     /**
@@ -138,12 +140,7 @@ class User
      */
     public function getName()
     {
-        $returnValue = null;
-
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:0000000000000903 begin
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:0000000000000903 end
-
-        return $returnValue;
+        return $name;
     }
 
     /**
@@ -155,12 +152,7 @@ class User
      */
     public function getLastName()
     {
-        $returnValue = null;
-
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:0000000000000905 begin
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:0000000000000905 end
-
-        return $returnValue;
+        return $lastName;
     }
 
     /**
@@ -172,12 +164,7 @@ class User
      */
     public function getPassword()
     {
-        $returnValue = null;
-
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:0000000000000907 begin
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:0000000000000907 end
-
-        return $returnValue;
+        return $password;
     }
 
     /**
@@ -193,7 +180,7 @@ class User
      */
     public function newAppointment( Timestamp $start,  Integer $length,  String $procedure,  String $employee)
     {
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:0000000000000909 begin
+		// section -64--88-56-1--7ac797d2:1350469f2e6:-8000:0000000000000909 begin
         // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:0000000000000909 end
     }
 
@@ -207,10 +194,6 @@ class User
     public function getAppointments()
     {
         $returnValue = null;
-
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:000000000000091B begin
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:000000000000091B end
-
         return $returnValue;
     }
 
@@ -223,12 +206,7 @@ class User
      */
     public function getEmail()
     {
-        $returnValue = null;
-
-        // section 84-46--7-77-6bcc67a9:13523e9c018:-8000:0000000000000A5F begin
-        // section 84-46--7-77-6bcc67a9:13523e9c018:-8000:0000000000000A5F end
-
-        return $returnValue;
+        return $email;
     }
 
     /**
@@ -240,14 +218,8 @@ class User
      */
     public function getTel_number()
     {
-        $returnValue = null;
-
-        // section 84-46--7-77-6bcc67a9:13523e9c018:-8000:0000000000000A61 begin
-        // section 84-46--7-77-6bcc67a9:13523e9c018:-8000:0000000000000A61 end
-
-        return $returnValue;
+        return $tel_number;
     }
 
-} /* end of class User */
-
+}
 ?>
