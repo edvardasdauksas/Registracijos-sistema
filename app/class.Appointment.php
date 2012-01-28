@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 error_reporting(E_ALL);
 
@@ -20,40 +20,11 @@ if (0 > version_compare(PHP_VERSION, '5')) {
 }
 
 /**
- * include AppointmentLoader
- *
- * @author firstname and lastname of author, <author@example.org>
- */
-require_once('class.AppointmentLoader.php');
-
-/**
- * include Employee
- *
- * @author firstname and lastname of author, <author@example.org>
- */
-require_once('class.Employee.php');
-
-/**
  * include Procedure
  *
  * @author firstname and lastname of author, <author@example.org>
  */
 require_once('class.Procedure.php');
-
-/**
- * include User
- *
- * @author firstname and lastname of author, <author@example.org>
- */
-require_once('class.User.php');
-
-/* user defined includes */
-// section -64--88-56-1--7ac797d2:1350469f2e6:-8000:0000000000000867-includes begin
-// section -64--88-56-1--7ac797d2:1350469f2e6:-8000:0000000000000867-includes end
-
-/* user defined constants */
-// section -64--88-56-1--7ac797d2:1350469f2e6:-8000:0000000000000867-constants begin
-// section -64--88-56-1--7ac797d2:1350469f2e6:-8000:0000000000000867-constants end
 
 /**
  * Short description of class Appointment
@@ -63,10 +34,6 @@ require_once('class.User.php');
  */
 class Appointment
 {
-    // --- ASSOCIATIONS ---
-    // generateAssociationEnd :     // generateAssociationEnd :     // generateAssociationEnd :     // generateAssociationEnd :     // generateAssociationEnd :     // generateAssociationEnd : 
-
-    // --- ATTRIBUTES ---
 
     /**
      * Short description of attribute Id
@@ -104,10 +71,11 @@ class Appointment
      * @param  Integer Id
      * @return mixed
      */
-    public function _construct( Timestamp $start,  Procedure $procedure,  Integer $Id)
+    public function __construct($start, Procedure $procedure, $Id)
     {
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:00000000000008E3 begin
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:00000000000008E3 end
+        $this->start = $start;
+		$this->procedure = $procedure;
+		$this->Id = $Id;
     }
 
     /**
@@ -119,12 +87,7 @@ class Appointment
      */
     public function getStart()
     {
-        $returnValue = null;
-
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:00000000000008E8 begin
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:00000000000008E8 end
-
-        return $returnValue;
+        return $this->start;
     }
 
     /**
@@ -136,12 +99,7 @@ class Appointment
      */
     public function getProcedureName()
     {
-        $returnValue = null;
-
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:00000000000008EA begin
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:00000000000008EA end
-
-        return $returnValue;
+        return $this->procedure->getName();
     }
 
     /**
@@ -153,12 +111,7 @@ class Appointment
      */
     public function getLength()
     {
-        $returnValue = null;
-
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:00000000000008EC begin
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:00000000000008EC end
-
-        return $returnValue;
+        return $this->procedure->getLength();
     }
 
 } /* end of class Appointment */
