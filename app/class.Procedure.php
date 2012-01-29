@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 error_reporting(E_ALL);
 
@@ -18,28 +18,6 @@ error_reporting(E_ALL);
 if (0 > version_compare(PHP_VERSION, '5')) {
     die('This file was generated for PHP 5');
 }
-
-/**
- * include Appointment
- *
- * @author firstname and lastname of author, <author@example.org>
- */
-require_once('class.Appointment.php');
-
-/**
- * include ProcedureLoader
- *
- * @author firstname and lastname of author, <author@example.org>
- */
-require_once('class.ProcedureLoader.php');
-
-/* user defined includes */
-// section -64--88-56-1--7ac797d2:1350469f2e6:-8000:000000000000086A-includes begin
-// section -64--88-56-1--7ac797d2:1350469f2e6:-8000:000000000000086A-includes end
-
-/* user defined constants */
-// section -64--88-56-1--7ac797d2:1350469f2e6:-8000:000000000000086A-constants begin
-// section -64--88-56-1--7ac797d2:1350469f2e6:-8000:000000000000086A-constants end
 
 /**
  * Short description of class Procedure
@@ -90,10 +68,11 @@ class Procedure
      * @param  Integer Id
      * @return mixed
      */
-    public function _construct( String $name,  Integer $length,  Integer $Id)
+    public function __construct($name, $length, $Id)
     {
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:00000000000008CC begin
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:00000000000008CC end
+        $this->name = $name;
+		$this->length = $length;
+		$this->Id = $Id;
     }
 
     /**
@@ -105,12 +84,7 @@ class Procedure
      */
     public function getName()
     {
-        $returnValue = null;
-
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:00000000000008D1 begin
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:00000000000008D1 end
-
-        return $returnValue;
+        return $this->name;
     }
 
     /**
@@ -122,12 +96,7 @@ class Procedure
      */
     public function getLength()
     {
-        $returnValue = null;
-
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:00000000000008D3 begin
-        // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:00000000000008D3 end
-
-        return $returnValue;
+        return $this->length;
     }
 
 } /* end of class Procedure */
