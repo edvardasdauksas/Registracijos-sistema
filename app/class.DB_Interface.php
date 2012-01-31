@@ -22,7 +22,7 @@ class DB_Interface
     private $password = null;
     private $db_name = null;
     private $pdo = null;
-    private $smtm = null;
+    private $stmt = null;
     // --- OPERATIONS ---
     /**
      * Short description of method _construct
@@ -33,24 +33,26 @@ class DB_Interface
      * @param  String password
      * @return mixed
      */
-    public function __construct( $host, $username, $password, $db_name )
+    public function __construct($host, $username, $password, $db_name)
     {
         $this->host = $host;
         $this->username = $username;
         $this->password = $password;
         $this->db_name = $db_name;
+        $this->pd = null;
         try {
-            $this->pdo = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
-            $this->pdo->exec("SET NAMES 'utf8' COLLATE 'utf8_bin'");
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            print_r("object created");
+            $this->pd = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
+            $this->pd->exec("SET NAMES 'utf8' COLLATE 'utf8_bin'");
+            $this->pd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            //echo "object created";
         } catch (PDOException $err) {
-            print_r($err->getMessage());
+            echo $err->getMessage();
         }
     }
     public function __destructor()
     {
-        $this->pdo = null;
+        $this->pd = null;
+        $this->stmt = null;
     }
     /**
      * Short description of method executeQuery
@@ -60,15 +62,55 @@ class DB_Interface
      * @param  String query
      * @return Table
      */
-    public function executeQuery( String $query)
+    public function executeQuery($query)
     {
         //not that functional yet
         $returnValue = null;
-        $this->smtm = $this->pdo>prepare($query);
-        $returnValue = $this->smtm->execute();
+        $this->stmt = $this->pd->prepare($query);
+        $returnValue = $this->stmt->execute();
         return $returnValue;
     }
-
+    public function insertUser($name, $lastName, $password, $email, $tel_number)
+    {
+        try {
+            $this->stmt = $this->pd->prepare("INSERT INTO user (name, last_name, password, email, tel_number) VALUES (:name, :last_name, :password, :email, :tel_number)");
+            $this->stmt->bindParam(":name", $name, PDO::PARAM_STR);
+            $this->stmt->bindParam(":last_name", $lastName, PDO::PARAM_STR);
+            $this->stmt->bindParam(":password", $password, PDO::PARAM_STR);
+            $this->stmt->bindParam(":email", $email, PDO::PARAM_STR);
+            $this->stmt->bindParam(":tel_number", $tel_number, PDO::PARAM_INT);
+            return $this->stmt->execute();
+            //echo "O.K.";
+            //cia gal reiktu return kokia reiksme on success/failure?
+        } catch (PDOException $err) {
+            return $err->getMessage();
+        }
+    }
+    public function deleteUser($id)
+    {
+        try {
+            $this->stmt = $this->pd->prepare("DELETE FROM user WHERE user_id = :user_id");
+            $this->stmt->bindParam(":user_id", $id, PDO::PARAM_INT);
+            return $this->stmt->execute();
+        } catch (PDOException $err) {
+            return $err->getMessage();
+        }
+    }
+    public function getUserData($email, $password) {
+        try {
+            $this->stmt = $this->pd->prepare("SELECT * FROM user WHERE email = :email AND password = :password");
+            $this->stmt->bindParam(":email", $email, PDO::PARAM_STR);
+            $this->stmt->bindParam(":password", $password, PDO::PARAM_STR);
+            $this->stmt->execute();
+     return $this->stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $err) {
+            return $err->getMessage();
+        }
+    }
+    /*public function insertProcedure()
+    {
+    
+    }*/
 } /* end of class DB_Interface */
 
 ?>
