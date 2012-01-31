@@ -96,6 +96,17 @@ class DB_Interface
             return $err->getMessage();
         }
     }
+    public function getUserData($email, $password) {
+        try {
+            $this->stmt = $this->pd->prepare("SELECT * FROM user WHERE email = :email AND password = :password");
+            $this->stmt->bindParam(":email", $email, PDO::PARAM_STR);
+            $this->stmt->bindParam(":password", $password, PDO::PARAM_STR);
+            $this->stmt->execute();
+     return $this->stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $err) {
+            return $err->getMessage();
+        }
+    }
     /*public function insertProcedure()
     {
     

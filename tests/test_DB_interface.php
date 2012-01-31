@@ -15,10 +15,24 @@
     $tel_number = 12345678;
     //user irasymas
     //grazina rows affected (turetu grazinti 1 siuo atveju) arba errora
-    //echo($db->insertUser($name, $lastName, $password, $email, $tel_number));
+    echo($db->insertUser($name, $lastName, $password, $email, $tel_number));
+    echo " < sukurem vartotoja <br/>";
     //$id = 8;
     //istrinti vartotoja
-    //echo($db->deleteUser($id));
+    //istraukiam userio duomenis array formatu pagal tai kaip pavadinta duombazeje
+    if($result = $db->getUserData($email, $password)) {
+      print_r($result);
+      echo " < vartotojo duomenys <br/>";
+    } else {
+      echo "neturim";
+    }
+    if($db->getUserData($email, "random")) { //jeigu duomenu nera grazina false !!!!!<<<<
+      echo "turim";
+    } else {
+      echo "neturim vartotojo su password random <br/>";
+    }
+    echo($db->deleteUser($result['user_id']));
+    echo " < istrynem vartotoja <br/>";
     //sunaikina X (objekta?)
     $db->__destructor();
     
