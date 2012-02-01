@@ -21,7 +21,7 @@ class User
     
     public function __construct($Id, $name, $lastName, $password, $email, $tel_number)
     {
-	if(isset($Id)) {
+		if(isset($Id)) {
             $this->Id = $Id;
             $appointmentLoader = new AppointmentLoader();   
             $this->appointments = $appointmentLoader->getUserAppointments($Id); 
@@ -49,7 +49,7 @@ class User
         return $this->password;
     }
 
-    public function newAppointment(Timestamp $start,  Integer $length,  String $procedure,  String $employee)
+    public function newAppointment($start, $length, $procedure, $employee)
     {
         
     }

@@ -105,7 +105,7 @@ class Employee
      * @param  Integer Id
      * @return mixed
      */
-    public function _construct( String $name,  String $lastName,  Integer $Id)
+    public function _construct($name, $lastName, $Id)
     {
         // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:000000000000091D begin
         // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:000000000000091D end

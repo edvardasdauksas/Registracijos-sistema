@@ -21,12 +21,12 @@ class AppointmentLoader
         $this->database = $database;
     }
 
-    public function getUserAppointments( Integer $userId)
+    public function getUserAppointments($userId)
     {
         echo 'dude';
     }
 
-    public function getEmployeeAppointments( Integer $employeeId)
+    public function getEmployeeAppointments($employeeId)
     {
         echo 'dude';
     }

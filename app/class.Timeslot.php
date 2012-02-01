@@ -74,7 +74,7 @@ class Timeslot
      * @param  Integer length
      * @return mixed
      */
-    public function _construct( Timestamp $start,  Integer $length)
+    public function _construct($start, $length)
     {
         // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:0000000000000936 begin
         // section -64--88-56-1--7ac797d2:1350469f2e6:-8000:0000000000000936 end

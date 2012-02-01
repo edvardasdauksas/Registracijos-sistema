@@ -1,14 +1,27 @@
 <?php
 
-require_once 'class.User.php';
+// ---- Dar nesukuria/neiðtraukai duomenø. Reikës perdaryti á ajax (o gal ir ne)
 
-$user = new User();  
+
+require_once 'class.User.php'; 
+
+$user = null;
 
 	if(!isset($_SESSION['id'])) {
 		if(isset($_GET['action'])) {
-		
+			if($_GET['action'] == 'login') {
+				$user = new User(null, null, null, $_POST['password-login'], $_POST['email-login'], null);
+				if(isset($_POST['remember-login'])) {
+				
+				}
+			} else {
+				$user = new User(null, $_POST['name'], $_POST['second-name'], $_POST['password-registration'], $_POST['e-mail-registration'], $_POST['phone']); 
+				if(isset($_POST['remember-registration'])) {
+				
+				}
+			}
 		} else { 
-			header( 'Location: ../public/user.html' );
+			header( 'Location: ../public/login_register.html' );
 		}
 	} else {
 		header( 'Location: ../public/procedure_registration.html' );
