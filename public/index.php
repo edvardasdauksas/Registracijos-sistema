@@ -7,24 +7,23 @@
 ?>
 
 <html>
-    <head>
-	<link href="css/jquery-ui.css" rel="stylesheet" type="text/css"/>
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="js/scripts.js"></script>
-	<link type="text/css" rel="stylesheet" href="css/styles.css" />
-    </head>
-    <body>
-	<div class="main">
-            <header></header>
-            <div class="content">
-                <div id="stylist">
-
-                </div>
-                <div id="procedure">
-
-                </div>
-            </div>
+  <head>
+    <meta charset="utf-8">
+    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/styles.css" />
+  </head>
+	<body>
+		<div class="main">
+			<header></header>
+			<div class="content">
+				<div id="stylist">
+          <div id="procedures">
+          </div>
         </div>
-    </body>
+			</div>
+		</div>
+	</body>
 </html>
