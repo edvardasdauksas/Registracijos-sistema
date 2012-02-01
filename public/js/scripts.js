@@ -16,19 +16,13 @@ $(document).ready(function() {
 
 function generateProcedureList() {
     for(var i = 1; i <= 5; i++) {
-        $('#stylist').append('<div class="frame" id="stylist-' + i + '"><img />Stilistas</div>');
-        $('#stylist-' + i).click(function() {
-            alert('Stylistas ' + i);
-        });
+        $('#stylist').append('<a class="frame" id="stylist-' + i + '" href="../app/process_user.php"><img />Stilistas</a>');
     }
 }
 
 function generateStylistList () {
     for(var i = 1; i <= 5; i++) {
-        $('#procedure').append('<div class="frame" id="procedure-' + i + '"><img />Procedûra</div>');
-        $('#procedure-' + i).click(function() {
-            alert('Procedûra ' + i);
-        });
+        $('#procedure').append('<a class="frame" id="procedure-' + i + '" href="../app/process_user.php"><img />Procedûra</a>');
     }
 }
 

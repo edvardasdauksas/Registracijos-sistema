@@ -19,7 +19,7 @@ class User
     private $email = null;
     private $tel_number = null;
     
-    public function __construct(Integer $Id, String $name,  String $lastName,  String $password, String $email, String $tel_number)
+    public function __construct($Id, $name, $lastName, $password, $email, $tel_number)
     {
 	if(isset($Id)) {
             $this->Id = $Id;
@@ -28,7 +28,7 @@ class User
         } 
         
         $this->name = $name;
-	$this->lastName = $lastName;
+		$this->lastName = $lastName;
         $this->password = $password;
         $this->email = $email;
         $this->tel_number  = $tel_number;       

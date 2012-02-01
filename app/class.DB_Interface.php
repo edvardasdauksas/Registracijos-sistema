@@ -102,7 +102,7 @@ class DB_Interface
             $this->stmt->bindParam(":email", $email, PDO::PARAM_STR);
             $this->stmt->bindParam(":password", $password, PDO::PARAM_STR);
             $this->stmt->execute();
-     return $this->stmt->fetch(PDO::FETCH_ASSOC);
+			return $this->stmt->fetch(PDO::FETCH_ASSOC);
         } catch (PDOException $err) {
             return $err->getMessage();
         }

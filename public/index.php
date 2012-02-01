@@ -2,10 +2,7 @@
     session_start();
     
     if(isset($_COOKIE['btyprlusr']) && isset($_COOKIE['btyprlpsw']) && !isset($_SESSION['id'])) {
-	require_once 'class.User.php';
-        $user = new User();
-        $user->__construct($_COOKIE['btyprlusr'], null, null, $_COOKIE['btyprlpsw'], null, null);
-        $_SESSION['id'] = $user->getId();
+        $_SESSION['id'] = $_COOKIE['btyprlusr'];
     }
 ?>
 
