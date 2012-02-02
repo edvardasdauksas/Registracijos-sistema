@@ -1,6 +1,6 @@
 <?php
 
-// ---- Dar nesukuria/neiðtraukai duomenø. Reikës perdaryti á ajax (o gal ir ne)
+// ---- Dar nesukuria/neistraukai duomenÅ³. ReikÄ—s perdaryti Ä¯ ajax (o gal ir ne)
 
 
 require_once 'class.User.php'; 
