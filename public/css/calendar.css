@@ -1,11 +1,11 @@
 div.main {
 	width: 802px;
-	border: 1px solid black;
+	border: 1px solid #A0A0A0;
 }
 
 div.months {
 	margin: 10px 10px 10px 10px;
-	border: 1px solid black;
+	border: 1px solid #A0A0A0;
 	height: 40px;
 }
 
@@ -24,7 +24,7 @@ div.month, div.day {
 div.m-selected {
 	border-width: 0px 1px 1px 1px;
 	border-style: solid;
-	border-color: black;
+	border-color: #A0A0A0;
 	padding-top: 14px;
 	padding-left: 4px;
 	padding-right: 4px;
@@ -33,7 +33,7 @@ div.m-selected {
 
 div.days {
 	margin: 0px 10px 10px 10px;
-	border: 1px solid black;
+	border: 1px solid #A0A0A0;
 	height: 100px;
 	padding: 0px 15px 0px 15px;
 }
@@ -49,7 +49,7 @@ div.day {
 	font-size: 14px;
 	font-family: calibri;
 	border-width: 0px 1px 1px 1px;
-	border-color: black;
+	border-color: #A0A0A0;
 	border-style: solid;
 	text-align: center;
 }
@@ -60,14 +60,14 @@ div.d-selected {
 
 div.content {
 	margin: 0px 10px 10px 10px;
-	border: 1px solid black;
+	border: 1px solid #A0A0A0;
 	position: relative;
 }
 
 div.time {
 	width: 49px;
 	float:left;
-	border-right: 1px solid black;
+	border-right: 1px solid #A0A0A0;
 }
 
 div.grid {
@@ -78,12 +78,12 @@ div.grid {
 
 div.hour {
 	height: 39px;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #A0A0A0;
 }
 
 div.time-slot {
 	height: 19px;
-	border-bottom: 1px solid black;	
+	border-bottom: 1px solid #A0A0A0;	
 }
 
 
@@ -92,7 +92,7 @@ div.dialog {
 	position: absolute;
 	padding: 15px;
 	background: white;
-	border: 1px solid black;
+	border: 1px solid #A0A0A0;
 	display: none;
 	left: 400px;
 }
@@ -100,13 +100,13 @@ div.dialog {
 
 
 div.info {
-	border: 1px solid black;
+	border: 1px solid #A0A0A0;
 	width:300px;
 	height: 100px;
 }
 
 div.action {
-	border: 1px solid black;
+	border: 1px solid #A0A0A0;
 	display: inline-block;
 	margin-top: 5px;
 	padding: 3px;
@@ -122,6 +122,12 @@ div.user-selection {
 	left: 50px;
 	z-index: -20;
 	display: none;
+}
+
+div.server-response {
+	position: fixed;
+	top: 30px;
+	right: 30px;
 }
 
 div.visible {

@@ -1,0 +1,1 @@
+<?php	$_SESSION['link'] = mysql_connect('localhost', 'root', '');	mysql_select_db('beauty_parlour',$_SESSION['link']);		mysql_query("insert into appointment (appointment_id,employee_id,user_id,time_slot_id, procedure_id) values(1,'$_POST[employee]','$_POST[user]','$_POST[timeslot]','$_POST[procedure]');");	?>

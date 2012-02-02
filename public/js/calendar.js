@@ -37,8 +37,7 @@ $(document).ready(function() {
 		type: 'POST',
 		data: contentString,
 		success: function(data){
-			alert(data);
-			window.location.reload();
+			$('.server-response ').html('Response :>');
 		}
 	});
 	});
