@@ -1,0 +1,140 @@
+div.main {
+	width: 802px;
+	border: 1px solid black;
+}
+
+div.months {
+	margin: 10px 10px 10px 10px;
+	border: 1px solid black;
+	height: 40px;
+}
+
+div.month, div.day {
+	display: inline-block;
+	height: 20px;
+	padding-top: 15px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+div.m-selected {
+	border-width: 0px 1px 1px 1px;
+	border-style: solid;
+	border-color: black;
+	padding-top: 14px;
+	padding-left: 4px;
+	padding-right: 4px;
+	background: grey;
+}
+
+div.days {
+	margin: 0px 10px 10px 10px;
+	border: 1px solid black;
+	height: 100px;
+	padding: 0px 15px 0px 15px;
+}
+
+div.day {
+	width: 16px;
+	margin-left: 3px;
+	margin-right: 3px;
+	height: 15px;
+	padding-top: 60px;
+	padding-left: 0px;
+	padding-right: 0px;
+	font-size: 14px;
+	font-family: calibri;
+	border-width: 0px 1px 1px 1px;
+	border-color: black;
+	border-style: solid;
+	text-align: center;
+}
+
+div.d-selected {
+	background: grey;
+}
+
+div.content {
+	margin: 0px 10px 10px 10px;
+	border: 1px solid black;
+	position: relative;
+}
+
+div.time {
+	width: 49px;
+	float:left;
+	border-right: 1px solid black;
+}
+
+div.grid {
+	width: 730px;
+	float: right;
+	
+}
+
+div.hour {
+	height: 39px;
+	border-bottom: 1px solid black;
+}
+
+div.time-slot {
+	height: 19px;
+	border-bottom: 1px solid black;	
+}
+
+
+
+div.dialog {
+	position: absolute;
+	padding: 15px;
+	background: white;
+	border: 1px solid black;
+	display: none;
+	left: 400px;
+}
+
+
+
+div.info {
+	border: 1px solid black;
+	width:300px;
+	height: 100px;
+}
+
+div.action {
+	border: 1px solid black;
+	display: inline-block;
+	margin-top: 5px;
+	padding: 3px;
+	cursor: pointer;
+}
+
+div.user-selection {
+	position: absolute;
+	width: 730px;
+	opacity: 0.8;
+	height: 40px;
+	background: red;
+	left: 50px;
+	z-index: -20;
+	display: none;
+}
+
+div.visible {
+	display: block;
+}
+div.error {
+	background: red;
+}
+
+div.ok {
+	background: green;
+}
+
+div.reserved {
+	background: blue;
+}
