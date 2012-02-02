@@ -20,7 +20,8 @@
 			<header></header>
 			<div class="content">
 				<div id="stylist">
-          <div id="procedures">
+				</div>
+          <div id="procedure">
           </div>
         </div>
 			</div>

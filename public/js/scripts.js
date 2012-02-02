@@ -1,4 +1,4 @@
-function get_data() {
+﻿function get_data() {
 	$.ajax( {
         url: 'submit_order.php',
 		type: 'POST',
@@ -22,7 +22,7 @@ function generateProcedureList() {
 
 function generateStylistList () {
     for(var i = 1; i <= 5; i++) {
-        $('#procedure').append('<a class="frame" id="procedure-' + i + '" href="../app/process_user.php"><img />Proced�ra</a>');
+        $('#procedure').append('<a class="frame" id="procedure-' + i + '" href="../app/process_user.php"><img />Procedūra</a>');
     }
 }
 

@@ -1,11 +1,11 @@
-var slot_size = 3;
+ï»¿var slot_size = 3;
 var employee_id = 1;
 var procedure_id = 1;
 var timeslot_id = 1;
 var user_id = 1;
 
-var monthNames = [ "Sausis", "Vasaris", "Kovas", "Balandis", "Geguþë", "Birþelis",
-    "Liepa", "Rupjûtis", "Rugsëjis", "Spalis", "Lapkritis", "Gruodis" ];
+var monthNames = [ "Sausis", "Vasaris", "Kovas", "Balandis", "GeguÅ¾Ä—", "BirÅ¾elis",
+    "Liepa", "RupjÅ«tis", "RugsÄ—jis", "Spalis", "Lapkritis", "Gruodis" ];
 	
 	
 $(document).ready(function() {
@@ -23,12 +23,7 @@ $(document).ready(function() {
 	for(var i = 1; i <= 31; i++) {
 		$('.days').append('<div class="day" id="day-' + i + '">' + i + '</div>')
 	}
-	
-	$('.dialog').hover(function() {
-		$(this).addClass('visible');
-	} , function() {
-		$(this).removeClass('visible');
-	});
+
 	
 	$('#reg').click(function() {
 		contentString = '&user=' + user_id + '&employee=' + employee_id + '&procedure=' + procedure_id + '&timeslot=' + timeslot_id;
@@ -46,10 +41,11 @@ $(document).ready(function() {
 		$('.grid').append('<div class="time-slot" id="time-slot-' + i + '"></div>');
 			$('#time-slot-' + i).hover(function() {
 				$('.user-selection').addClass('visible');
-				$('.user-selection').css('top',($(this).offset().top - 185));
+				if(!$('.dialog').hasClass('visible')) {
+					$('.user-selection').css('top',($(this).offset().top - 185));
+				}
 				
-				$('.dialog').addClass('visible');
-				$('.dialog').css('top',($(this).offset().top - 365));
+				
 				var cool = true;
 					for(var j =0; j<3; j++) {
 						if($('#time-slot-' + (i +j)).hasClass('reserved')) {
@@ -64,9 +60,17 @@ $(document).ready(function() {
 					}
 				}			
 			, function(){
-				$('.user-selection').removeClass('visible');
-				$('.dialog').removeClass('visible');
+				if(!$('.dialog').hasClass('visible')) {
+					$('.user-selection').removeClass('visible');
+				}
+			}).click(function() {
+				$('.dialog').addClass('visible');
+				$('.dialog').css('top',($(this).offset().top - 365));
 			});
 	}
+	
+	$('#cancel-reg').click(function() {
+		$('.dialog').removeClass('visible');
+	});
 	
 });
