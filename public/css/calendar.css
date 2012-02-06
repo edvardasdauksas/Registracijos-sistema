@@ -121,7 +121,17 @@ div.user-selection {
 	background: red;
 	left: 50px;
 	z-index: -20;
-	display: none;
+}
+
+div.current-time {
+	width: 724px;
+	left: 50px;
+	z-index: 20;
+	border-bottom: 1px;
+	border-color: red;
+	border-style: solid;
+	height: 0px;
+	position: absolute;
 }
 
 div.server-response {
