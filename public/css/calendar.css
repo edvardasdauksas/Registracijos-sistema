@@ -1,17 +1,19 @@
+body {
+  margin: 0px;
+}
+
 div.main {
-	width: 802px;
+	width: auto;
 	border: 1px solid #A0A0A0;
 }
 
 div.months {
 	margin: 10px 10px 10px 10px;
 	border: 1px solid #A0A0A0;
-	height: 40px;
 }
 
 div.month, div.day {
 	display: inline-block;
-	height: 20px;
 	padding-top: 15px;
 	padding-left: 5px;
 	padding-right: 5px;
@@ -34,7 +36,6 @@ div.m-selected {
 div.days {
 	margin: 0px 10px 10px 10px;
 	border: 1px solid #A0A0A0;
-	height: 100px;
 	padding: 0px 15px 0px 15px;
 }
 
@@ -42,7 +43,6 @@ div.day {
 	width: 16px;
 	margin-left: 3px;
 	margin-right: 3px;
-	height: 15px;
 	padding-top: 60px;
 	padding-left: 0px;
 	padding-right: 0px;
@@ -153,4 +153,41 @@ div.ok {
 
 div.reserved {
 	background: blue;
+}
+
+nav {
+  width: auto;
+  display: block;
+  height: 30px;
+  border: 0px;
+  padding: 0px;
+  margin: 0px 0px 0px 10px;
+}
+
+ul {
+  list-style:none;
+  margin:00px;
+  padding:0;
+  overflow: auto;
+	width: 100%;
+}
+
+ul li {
+  display:block;
+}
+
+ul li a {
+  text-decoration:none;
+  padding:5px 0;
+  width:100px;
+  background:#485e49;
+  color:#eee;
+  float:left;
+  text-align:center;
+  border-left:1px solid #fff;
+}
+
+ul li a:hover {
+  background:#a2b3a1;
+  color:#000;
 }

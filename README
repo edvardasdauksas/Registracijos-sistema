@@ -1,9 +1,16 @@
 /////////
 //TO-DO//
 /////////
+   NAVIGATION BAR //Mantas
+    namai
+    proceduru perziura
+    kalendorius
+    nustatymai
+    ????
+    logout
+   
 1. Front page
-	a. Paging
-	b. Design
+	b. Design //????
 	c. Login stuff here too?
 2. User Login/registration - Edvardas
 	a. Fix elements
@@ -12,10 +19,7 @@
 	a. Some more CSS
 	b. Javascript functions
 	c. Queries
-4. View Appointments
-	a. Button somewhere?
-	b. List appointments
-	c. appointment actions.
+4. View Appointments //Petras
 ????
 PROFIT
 
