@@ -8,6 +8,8 @@ var month = date.getMonth();
 var day = date.getDate();
 var hour = date.getHours();
 var minute = date.getMinutes();
+var available = false;
+var first = false;
 
 var monthNames = [ "Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis",
     "Liepa", "Rupjūtis", "Rugsėjis", "Spalis", "Lapkritis", "Gruodis" ];
@@ -41,6 +43,7 @@ $(document).ready(function() {
 
 	
 	$('#reg').click(function() {
+		$('#reg-status').html('Registruojama...');
 		contentString = '&user=' + user_id + '&employee=' + employee_id + '&procedure=' + procedure_id + '&timeslot=' + timeslot_id;
 		$.ajax({
 		url: '../app/register.php',
@@ -48,6 +51,8 @@ $(document).ready(function() {
 		data: contentString,
 		success: function(data){
 			$('.server-response ').html('Response :>');
+			$('#reg-status').html('Sėkmingai užregistruota!');
+			$('#reg').css('display','none');
 		}
 	});
 	});
@@ -58,13 +63,18 @@ $(document).ready(function() {
 	
 	for(var i = 1; i <= 28; i++) {
 		if(checkSlot(i)) {
+		available = true;
+		if(!first) {
+			$('.user-selection').css('top',($('#time-slot-' + i).offset().top - 206));
+			first = true;
+		}
 			$('#time-slot-' + i).hover(function() {
 				if(!$('.dialog').hasClass('visible')) {
 					$('.user-selection').css('top',($(this).offset().top - 206));
 				}		
 			}			
 			, function(){}).click(function() {
-				$('.user-selection').css('top',($(this).offset().top - 185));
+				$('.user-selection').css('top',($(this).offset().top - 206));
 				$('.dialog').addClass('visible');
 				$('.dialog').css('top',($(this).offset().top - 365));
 			});
@@ -74,10 +84,11 @@ $(document).ready(function() {
 	$('#cancel-reg').click(function() {
 		$('.dialog').removeClass('visible');
 	});
-	 
-	
-	
-	
+	if(available == true) {
+		$('.user-selection').css('display','block');
+	} else {
+		
+	}
 });
 
 function getDaySlots() {

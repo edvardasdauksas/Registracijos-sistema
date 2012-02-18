@@ -1,7 +1,5 @@
 nav {
-  width: auto;
-  display: block;
-  height: 30px;
+  min-height: 30px;
   border: 0px;
   padding: 0px;
   margin: 0px 0px 0px 10px;
@@ -9,14 +7,9 @@ nav {
 
 ul {
   list-style:none;
-  margin:00px;
   padding:0;
   overflow: auto;
-	width: 100%;
-}
-
-ul li {
-  display:block;
+  margin: 00px;
 }
 
 ul li a {

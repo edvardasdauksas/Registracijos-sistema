@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html>
     <head>
         <link href="css/jquery-ui.css" rel="stylesheet" type="text/css"/>
@@ -38,6 +38,7 @@
 				<div>
 					<div class="action" id="reg">Registruotis</div>
 					<div class="action" id="cancel-reg">Atšaukti</div>
+					<div class="reg-status" id="reg-status"></div>
 				</div>
 			</div>
 				<div class="time">

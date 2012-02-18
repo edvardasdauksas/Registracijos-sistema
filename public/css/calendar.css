@@ -124,6 +124,7 @@ div.user-selection {
 	height: 40px;
 	background: red;
 	z-index: -20;
+	display: none;
 }
 
 div.current-time {
@@ -152,4 +153,11 @@ div.ok {
 
 div.reserved {
 	background: blue;
+}
+
+div.reg-status {
+	border: 1px solid #A0A0A0;
+	display: inline-block;
+	margin-top: 5px;
+	padding: 3px;
 }
