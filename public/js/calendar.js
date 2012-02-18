@@ -60,7 +60,7 @@ $(document).ready(function() {
 		if(checkSlot(i)) {
 			$('#time-slot-' + i).hover(function() {
 				if(!$('.dialog').hasClass('visible')) {
-					$('.user-selection').css('top',($(this).offset().top - 185));
+					$('.user-selection').css('top',($(this).offset().top - 180));
 				}		
 			}			
 			, function(){}).click(function() {
