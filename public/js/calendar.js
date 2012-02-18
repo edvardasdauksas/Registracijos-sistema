@@ -60,7 +60,7 @@ $(document).ready(function() {
 		if(checkSlot(i)) {
 			$('#time-slot-' + i).hover(function() {
 				if(!$('.dialog').hasClass('visible')) {
-					$('.user-selection').css('top',($(this).offset().top - 180));
+					$('.user-selection').css('top',($(this).offset().top - 206));
 				}		
 			}			
 			, function(){}).click(function() {
@@ -96,6 +96,8 @@ function checkSlot(id) {
 	if(id + slot_size - 1 > 28) {
 		valid = false;
 	}
+	
+	if($('#time-slot-' + (id)).offset().top - 206 >= ((hour  - 8) * 40 + minute / 1.5))
 	
 	return valid;
 }

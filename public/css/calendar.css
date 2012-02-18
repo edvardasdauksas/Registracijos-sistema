@@ -15,6 +15,7 @@ div.aw {
 div.months {
 	margin: 10px 10px 10px 10px;
 	border: 1px solid #A0A0A0;
+	min-height: 40px;
 }
 
 div.month, div.day {
@@ -26,6 +27,7 @@ div.month, div.day {
 	margin-right: 5px;
 	font-size: 16px;
 	cursor: pointer;
+	min-height: 20px;
 }
 
 div.m-selected {
@@ -42,6 +44,7 @@ div.days {
 	margin: 0px 10px 10px 10px;
 	border: 1px solid #A0A0A0;
 	padding: 0px 15px 0px 15px;
+	min-height: 100px;
 }
 
 div.day {
@@ -57,6 +60,7 @@ div.day {
 	border-color: #A0A0A0;
 	border-style: solid;
 	text-align: center;
+	min-height: 15px;
 }
 
 div.d-selected {
@@ -90,8 +94,6 @@ div.time-slot {
 	margin-left: 50px;
 }
 
-
-
 div.dialog {
 	position: absolute;
 	padding: 15px;
@@ -99,6 +101,7 @@ div.dialog {
 	border: 1px solid #A0A0A0;
 	display: none;
 	left: 400px;
+	z-index: 400;
 }
 
 div.info {
@@ -150,4 +153,3 @@ div.ok {
 div.reserved {
 	background: blue;
 }
-
