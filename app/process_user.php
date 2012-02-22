@@ -19,16 +19,17 @@ $_SESSION['id'] = null;
 						
 				}
 			}
-			header( 'Location: ../public/procedure_registration.php' );
-		} else {
+		} else if($_GET['action'] == 'register') {
 			$user = new User(null, $_POST['name'], $_POST['second-name'], $_POST['password-registration'], $_POST['e-mail-registration'], $_POST['phone']); 
 			if(isset($_POST['remember-registration'])) {
 			
 			}
 			$user->register($connection);
+			$data = $user->login($connection);
+			$_SESSION['id'] = $data['user_id'];
+		} else if($_GET['action'] == 'logout') {
+			header( 'Location: ../public/login_register.html' );
 		}
-	} else { 
-		header( 'Location: ../public/login_register.html' );
 	}
-
+	header( 'Location: ../public/procedure_registration.php' );
 ?>
