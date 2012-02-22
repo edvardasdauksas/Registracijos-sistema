@@ -1,4 +1,16 @@
-﻿<!DOCTYPE HTML>
+﻿<?php
+	session_start();
+	
+	if(!isset($_SESSION['id'])) {
+		header( 'Location: ../public/login_register.html' );
+	}
+
+
+
+?>
+
+
+<!DOCTYPE HTML>
 <html>
     <head>
         <link href="css/jquery-ui.css" rel="stylesheet" type="text/css"/>

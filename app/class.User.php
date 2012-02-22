@@ -7,6 +7,7 @@ if (0 > version_compare(PHP_VERSION, '5')) {
 }
 
 require_once('class.AppointmentLoader.php');
+require_once('class.DB_Interface.php');
 
 class User
 {
@@ -73,6 +74,14 @@ class User
     {
         return $this->Id;
     }
+	
+	public function login($connection) {
+		return $connection->getUserData($this->email,$this->password);
+	}
+	
+	public function register($connection) {
+		$connection->insertUser($this->name, $this->lastName, $this->password, $this->email, $this->tel_number);
+	}
 
 }
 ?>

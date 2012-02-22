@@ -80,8 +80,6 @@ class DB_Interface
             $this->stmt->bindParam(":email", $email, PDO::PARAM_STR);
             $this->stmt->bindParam(":tel_number", $tel_number, PDO::PARAM_INT);
             return $this->stmt->execute();
-            //echo "O.K.";
-            //cia gal reiktu return kokia reiksme on success/failure?
         } catch (PDOException $err) {
             return $err->getMessage();
         }
