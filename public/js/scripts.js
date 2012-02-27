@@ -26,7 +26,7 @@ function generateProcedureList() {
     }
   }
   //jeigu ka reikia pakeisti path pagal savo masina
-  req.open("GET","/../bp/app/gen_proc.php",true);
+  req.open("GET","../app/gen_proc.php",true);
   req.send();
   /*for(var i = 1; i <= 5; i++) {
       $('#stylist').append('<a class="frame" id="procedure-' + i + '" href="../app/process_user.php"><img />Stilistas</a>');
@@ -45,7 +45,7 @@ function generateStylistList () {
     }
   }
   //jeigu ka reikia pakeisti path pagal savo masina
-  req.open("GET","/../bp/app/gen_styl.php",true);
+  req.open("GET","../app/gen_styl.php",true);
   req.send();
     /*for(var i = 1; i <= 5; i++) {
         $('#procedure').append('<a class="frame" id="stylist-' + i + '" href="../app/process_user.php"><img />Procedūra</a>');

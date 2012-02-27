@@ -40,7 +40,7 @@ div.label, input{
     height: 30px;
     width: 45%;
     display: inline-block;
-	overflow: hidden;
+	
 }
 
 div.column {
@@ -64,7 +64,7 @@ div.column {
 }
 
 button, input.user {
-width: auto;
+	width: auto;
     height: 70px;
 	position: absolute;
 	right: 20px;

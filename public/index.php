@@ -12,13 +12,13 @@
     <meta charset="utf-8">
     <link href="css/jquery-ui.css" rel="stylesheet" type="text/css"/>
     <link type="text/css" rel="stylesheet" href="css/styles.css" />
+	<link type="text/css" rel="stylesheet" href="css/nav.css" />
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
   </head>
 	<body>
 		<div class="main">
-			<header><h1>WHAT WHAT WHAT WHAT WHA no</h1></header>
       <nav>
         <?php
           $nav = include "../app/nav.php";

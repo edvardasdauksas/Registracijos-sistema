@@ -105,6 +105,21 @@ class DB_Interface
             return $err->getMessage();
         }
     }
+	
+	public function insertSlot($start, $length, $employee)
+    {
+        try {
+            $this->stmt = $this->pd->prepare("INSERT INTO time_slot (start, length, employee) VALUES (:start, :length, :employee)");
+            $this->stmt->bindParam(":start", strtotime(date("Y-m-d H:i:s")), PDO::PARAM_STR);
+            $this->stmt->bindParam(":length", $length, PDO::PARAM_INT);
+            $this->stmt->bindParam(":employee", $employee, PDO::PARAM_INT);
+            return $this->stmt->execute();
+        } catch (PDOException $err) {
+            return $err->getMessage();
+        }
+    }
+	
+	
     /*public function insertProcedure()
     {
     
