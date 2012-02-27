@@ -15,10 +15,7 @@ try {
                         FROM `employee`');
   $sth->execute();
   while ($da = $sth->fetch(PDO::FETCH_ASSOC)) {
-    echo "employee id: " . $da['employee_id'] . "<br />";
-    echo "employee name: " . $da['name'] . "<br />";
-    echo "employee last name: " . $da['last_name'] . "<br />";
-    echo "employee tel: " . $da['tel_number'] . "<br />";
+    echo "$da[employee_id]:$da[name]:$da[last_name];";
   }
 } catch (PDOException $err) {
   echo $err->getMessage();

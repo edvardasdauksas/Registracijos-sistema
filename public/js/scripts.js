@@ -1,55 +1,35 @@
-﻿function get_data() {
+﻿var stylist = new Array();
+var procedure = new Array();
+
+function get_procedure() {
 	$.ajax( {
-        url: 'submit_order.php',
-		type: 'POST',
-		data: dataString,
+        url: '../app/gen_proc.php',
+		type: 'GET',
 		success: function( data ) {
-		
+			procedure = data.split(";");
+			for(i = 0; i < procedure.length - 1; i ++) {
+				pData = procedure[i].split(":");
+				$('#procedure').append('<a class="frame" id="procedure-' + pData[0] + '" href="../app/process_user.php"><img />' + pData[1] + '</a>');
+			}
+		}
+	});
+}
+
+function get_stylist() {
+	$.ajax( {
+        url: '../app/gen_styl.php',
+		type: 'GET',
+		success: function( data ) {
+			stylist = data.split(";");
+			for(i = 0; i < stylist.length - 1; i ++) {
+				sData = stylist[i].split(":");
+				$('#stylist').append('<a class="frame" id="stylist-' + sData[0] + '" href="../app/process_user.php"><img />' + sData[1] + " " + sData[2] + '</a>');
+			}
 		}
 	});
 }
 
 $(document).ready(function() {
-    generateProcedureList();
-    generateStylistList();
+    get_procedure();
+	get_stylist();
 });
-
-function generateProcedureList() {
-  var req,
-    par,
-    send;
-  par = document.getElementById('procedure');
-  req=new XMLHttpRequest();
-  req.onreadystatechange=function() {
-    if (req.readyState==4 && req.status==200) {
-      par.innerHTML += req.responseText;
-    }
-  }
-  //jeigu ka reikia pakeisti path pagal savo masina
-  req.open("GET","../app/gen_proc.php",true);
-  req.send();
-  /*for(var i = 1; i <= 5; i++) {
-      $('#stylist').append('<a class="frame" id="procedure-' + i + '" href="../app/process_user.php"><img />Stilistas</a>');
-  }*/
-}
-
-function generateStylistList () {
-  var req,
-    par,
-    send;
-  par = document.getElementById('stylist');
-  req=new XMLHttpRequest();
-  req.onreadystatechange=function() {
-    if (req.readyState==4 && req.status==200) {
-      par.innerHTML = req.responseText;
-    }
-  }
-  //jeigu ka reikia pakeisti path pagal savo masina
-  req.open("GET","../app/gen_styl.php",true);
-  req.send();
-    /*for(var i = 1; i <= 5; i++) {
-        $('#procedure').append('<a class="frame" id="stylist-' + i + '" href="../app/process_user.php"><img />Procedūra</a>');
-    }*/
-}
-
-		

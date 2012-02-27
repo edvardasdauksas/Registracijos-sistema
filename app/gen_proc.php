@@ -15,10 +15,7 @@ try {
                         FROM `procedure`');
   $sth->execute();
   while ($da = $sth->fetch(PDO::FETCH_ASSOC)) {
-    echo "procedure id: " . $da['procedure_id'] . "<br />";
-    echo "procedure name: " . $da['name'] . "<br />";
-    echo "procedure length: " . $da['length'] . "<br />";
-    echo "procedure employee id: " . $da['employee_id'] . "<br />";
+    echo "$da[procedure_id]:$da[name]:$da[length];";
   }
 } catch (PDOException $err) {
   echo $err->getMessage();

@@ -28,6 +28,7 @@ a.frame {
     float: left;
     margin: 10px;
     cursor: pointer;
+	height: 100%
 }
 
 a.frame img {
