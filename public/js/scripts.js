@@ -9,7 +9,7 @@ function get_procedure() {
 			procedure = data.split(";");
 			for(i = 0; i < procedure.length - 1; i ++) {
 				pData = procedure[i].split(":");
-				$('#procedure').append('<a class="frame" id="procedure-' + pData[0] + '" href="../app/process_user.php"><img />' + pData[1] + '</a>');
+				$('#procedure').append('<a class="frame" id="procedure-' + pData[0] + '" href="../app/process_user.php?procedure=' + pData[0] + '"><img />' + pData[1] + '</a>');
 			}
 		}
 	});
@@ -23,7 +23,7 @@ function get_stylist() {
 			stylist = data.split(";");
 			for(i = 0; i < stylist.length - 1; i ++) {
 				sData = stylist[i].split(":");
-				$('#stylist').append('<a class="frame" id="stylist-' + sData[0] + '" href="../app/process_user.php"><img />' + sData[1] + " " + sData[2] + '</a>');
+				$('#stylist').append('<a class="frame" id="stylist-' + sData[0] + '" href="../app/process_user.php?stylist=' + sData[0] + '"><img />' + sData[1] + " " + sData[2] + '</a>');
 			}
 		}
 	});
