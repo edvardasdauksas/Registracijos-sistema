@@ -15,15 +15,41 @@ $(document).ready(function() {
 });
 
 function generateProcedureList() {
-    for(var i = 1; i <= 5; i++) {
-        $('#stylist').append('<a class="frame" id="stylist-' + i + '" href="../app/process_user.php"><img />Stilistas</a>');
+  var req,
+    par,
+    send;
+  par = document.getElementById('procedure');
+  req=new XMLHttpRequest();
+  req.onreadystatechange=function() {
+    if (req.readyState==4 && req.status==200) {
+      par.innerHTML += req.responseText;
     }
+  }
+  //jeigu ka reikia pakeisti path pagal savo masina
+  req.open("GET","/../bp/app/gen_proc.php",true);
+  req.send();
+  /*for(var i = 1; i <= 5; i++) {
+      $('#stylist').append('<a class="frame" id="procedure-' + i + '" href="../app/process_user.php"><img />Stilistas</a>');
+  }*/
 }
 
 function generateStylistList () {
-    for(var i = 1; i <= 5; i++) {
-        $('#procedure').append('<a class="frame" id="procedure-' + i + '" href="../app/process_user.php"><img />Procedūra</a>');
+  var req,
+    par,
+    send;
+  par = document.getElementById('stylist');
+  req=new XMLHttpRequest();
+  req.onreadystatechange=function() {
+    if (req.readyState==4 && req.status==200) {
+      par.innerHTML = req.responseText;
     }
+  }
+  //jeigu ka reikia pakeisti path pagal savo masina
+  req.open("GET","/../bp/app/gen_styl.php",true);
+  req.send();
+    /*for(var i = 1; i <= 5; i++) {
+        $('#procedure').append('<a class="frame" id="stylist-' + i + '" href="../app/process_user.php"><img />Procedūra</a>');
+    }*/
 }
 
 		
